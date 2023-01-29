@@ -17,8 +17,6 @@ const LazyGallery: React.FC<{ program: NFTDrop }> = ({ program }) => {
 
   const { data: totalSupply } = useTotalSupply(program);
 
-  console.log(metadata);
-
   useEffect(() => {
     if (totalSupply && count > totalSupply) {
       setAllShown(true);

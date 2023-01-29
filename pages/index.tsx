@@ -36,7 +36,6 @@ const Home: NextPage = () => {
   const { program } = useProgram(nftDropProgramAddress, "nft-drop");
 
   const { data: collectionMetadata } = useProgramMetadata(program);
-  console.log("COLLECTION", collectionMetadata);
 
   const { mutateAsync: claim, isLoading, error } = useClaimNFT(program);
 
@@ -65,14 +64,15 @@ const Home: NextPage = () => {
           </p>
 
           {/* COLLECTION CLAIMING/MINTING DETAILS */}
-          <div className={styles.details}>
-            <span>Total Minted</span>
+          {claimedSupply && totalSupply && (
+            <div className={styles.details}>
+              <span>Total Minted</span>
 
-            <span>
-              {claimedSupply ? claimedSupply : 0}/
-              {totalSupply ? totalSupply : 0}
-            </span>
-          </div>
+              <span>
+                {claimedSupply}/{totalSupply}
+              </span>
+            </div>
+          )}
 
           <WalletMultiButtonDynamic />
 
