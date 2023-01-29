@@ -26,8 +26,11 @@ select {
 :root {
   --background-color: #1c1e21;
   --white: #ffffff;
+  --dim: #6D6D6D;
+  --light-pink: #FFD7F9;
   --tw-color1: #a855f7;
   --tw-color1-hover: #9333ea;
+  --tw-color2: #e011a7;
 }
 
 body {
