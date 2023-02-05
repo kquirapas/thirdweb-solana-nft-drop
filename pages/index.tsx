@@ -10,7 +10,7 @@ import {
   useTotalSupply,
 } from "@thirdweb-dev/react/solana";
 
-import { LazyGallery } from "modules/common";
+import LazyGallery from "../components/LazyGallery";
 
 // Default styles that can be overridden by your app
 require("@solana/wallet-adapter-react-ui/styles.css");
