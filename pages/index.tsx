@@ -11,7 +11,6 @@ import {
 } from "@thirdweb-dev/react/solana";
 
 import { LazyGallery } from "modules/common";
-import { useEffect } from "react";
 
 // Default styles that can be overridden by your app
 require("@solana/wallet-adapter-react-ui/styles.css");
@@ -37,7 +36,7 @@ const Home: NextPage = () => {
 
   const { data: collectionMetadata } = useProgramMetadata(program);
 
-  const { mutateAsync: claim, isLoading, error } = useClaimNFT(program);
+  const { mutateAsync: claim } = useClaimNFT(program);
 
   // supply hooks
   const { data: claimedSupply } = useDropTotalClaimedSupply(program);

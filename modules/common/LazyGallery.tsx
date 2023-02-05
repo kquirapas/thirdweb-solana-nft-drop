@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { NFTDrop } from "@thirdweb-dev/sdk/solana";
 import { useNFTs, useTotalSupply } from "@thirdweb-dev/react/solana";
@@ -39,7 +38,10 @@ const LazyGallery: React.FC<{ program: NFTDrop }> = ({ program }) => {
       <div className={styles.gallery}>
         {metadata?.map((e, idx) => (
           <div className={styles.card} key={idx}>
-            <img src={e.metadata.image as string} alt="thirdweb Logo" />
+            <img
+              src={e.metadata.image as string}
+              alt={e.metadata.name as string}
+            />
             <h3>{e.metadata.name}</h3>
             <p className={styles.dimText}>{`${e.owner.substring(
               0,
